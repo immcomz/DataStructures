@@ -41,6 +41,16 @@ public class Array {
         count--; // Decrement the total number of elements not the size purpose of printing
     }
 
+    //search item at index
+    public int indexOf(int item){
+    //if item found return index
+    // otherwise return -1
+        for (int i=0;i<count; i++ )
+            if(items[i]== item)
+                return i;
+        return -1;
+    }
+
     public void print(){
         for(int i=0; i< count; i++)
             System.out.println(items[i]);
