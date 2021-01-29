@@ -18,8 +18,9 @@ public class Main {
         linkedList.addLast(1);
         linkedList.addLast(2);
         linkedList.addLast(3);
-        //linkedList.addFirst(0);
+        linkedList.addFirst(0);
         System.out.println(linkedList.indexOf(3));
         linkedList.addLast(4);
+        System.out.println(linkedList.contains(1));
     }
 }

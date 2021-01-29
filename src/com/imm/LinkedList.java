@@ -16,6 +16,9 @@ public class LinkedList  {
     private Node first;//head
     private Node last;//tail
 
+    public boolean contains(int item){
+        return indexOf(item)!=-1;
+    }
     public int indexOf(int item){
         int index = 0;
         var current = first;
@@ -53,7 +56,7 @@ public class LinkedList  {
             first = node; // make node as first node
         }
     }
-    private Boolean isEmpty(){
+    private boolean isEmpty(){
         return first == null;
     }
 
