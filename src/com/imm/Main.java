@@ -18,5 +18,7 @@ public class Main {
         linkedList.addLast(1);
         linkedList.addLast(2);
         linkedList.addLast(3);
+        linkedList.addFirst(0);
+        linkedList.addLast(4);
     }
 }

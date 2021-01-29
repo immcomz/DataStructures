@@ -19,7 +19,7 @@ public class LinkedList  {
     public void addLast(int item){
         var node = new Node(item);
         //if linkedlist empty assign to first Node
-        if(first == null)
+        if(isEmpty())
             first = last = node;
         //else append the node to last Node
         else {
@@ -27,6 +27,21 @@ public class LinkedList  {
             last = node;
         }
     }
+    public void addFirst(int item){
+        var node = new Node(item);
 
+        //if the list is empty
+        if(isEmpty())
+           first = last =node; // addLast(item);
+
+        //otherwise add to first
+        else {
+            node.next = first; //assign address of previous first node
+            first = node; // make node as first node
+        }
+    }
+    private Boolean isEmpty(){
+        return first == null;
+    }
 
 }
