@@ -18,6 +18,21 @@ public class LinkedList  {
     private Node first;//head
     private Node last;//tail
 
+    public void removeLast(){
+
+        if(isEmpty()) throw new NoSuchElementException();
+
+        //if list has only one node
+        if(first == last){
+            first = last =null;
+            return;
+        }
+        var previous = getPreviousNode();
+        //making previous as last Node
+        last = previous;
+        last.next=null;
+
+    }
     public void removeFirst(){
         if(isEmpty()) throw new NoSuchElementException();
 
@@ -82,5 +97,15 @@ public class LinkedList  {
     private boolean isEmpty(){
         return first == null;
     }
-
+    private Node getPreviousNode(){
+        var current = first;
+        while(current != null){
+            //find the prevoius node and return
+            if(current.next == last) return current;
+            //travels through nodes
+            current = current.next;
+        }
+        //if cpuldnt find the node
+        return null;
+    }
 }
