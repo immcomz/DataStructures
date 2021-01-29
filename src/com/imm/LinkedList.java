@@ -17,6 +17,7 @@ public class LinkedList  {
 
     private Node first;//head
     private Node last;//tail
+    private int size; //length of list
 
     public void removeLast(){
 
@@ -25,12 +26,16 @@ public class LinkedList  {
         //if list has only one node
         if(first == last){
             first = last =null;
+            size--;
             return;
         }
         var previous = getPreviousNode();
         //making previous as last Node
         last = previous;
         last.next=null;
+
+        size--;
+
 
     }
     public void removeFirst(){
@@ -39,6 +44,7 @@ public class LinkedList  {
         // if list has only one Node
         if(first==last){
             first= last = null;
+            size--;
             return;
         }
         //Note:
@@ -53,6 +59,7 @@ public class LinkedList  {
         //now remove link/next from first (already have a backup)
         first.next=null;
         first=second; //assign brand new first to second
+        size--;
     }
     public boolean contains(int item){
         return indexOf(item)!=-1;
@@ -72,7 +79,7 @@ public class LinkedList  {
     }
     public void addLast(int item){
         var node = new Node(item);
-        //if linkedlist empty assign to first Node
+        //if linkedlist empty assign new node to first and last nodes
         if(isEmpty())
             first = last = node;
         //else append the node to last Node
@@ -80,6 +87,7 @@ public class LinkedList  {
             last.next = node;
             last = node;
         }
+        size++;
     }
     public void addFirst(int item){
         var node = new Node(item);
@@ -93,6 +101,7 @@ public class LinkedList  {
             node.next = first; //assign address of previous first node
             first = node; // make node as first node
         }
+        size++;
     }
     private boolean isEmpty(){
         return first == null;
