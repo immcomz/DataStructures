@@ -1,5 +1,7 @@
 package com.imm;
 
+import java.util.NoSuchElementException;
+
 public class LinkedList  {
 
     //make Node class private/ only accible by LinkedList class
@@ -16,6 +18,27 @@ public class LinkedList  {
     private Node first;//head
     private Node last;//tail
 
+    public void removeFirst(){
+        if(isEmpty()) throw new NoSuchElementException();
+
+        // if list has only one Node
+        if(first==last){
+            first= last = null;
+            return;
+        }
+        //Note:
+        //Solution 1:
+        // [10->20->30]  removing first [20->30], 10-> always link to 20
+        // so Garbage collector doesn't colect it (10->)
+        //Solution 2:
+        // [10 20->30] canot remove the link/next from first to 20
+        //cause it loose the track of second point
+        //Solution 3:
+        var second = first.next; //take a backup second node
+        //now remove link/next from first (already have a backup)
+        first.next=null;
+        first=second; //assign brand new first to second
+    }
     public boolean contains(int item){
         return indexOf(item)!=-1;
     }

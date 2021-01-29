@@ -15,10 +15,11 @@ public class Main {
 
         //creating new LinkedList
         var linkedList = new LinkedList();
-        linkedList.addLast(1);
-        linkedList.addLast(2);
-        linkedList.addLast(3);
-        linkedList.addFirst(0);
+        //linkedList.addLast(1);
+        //linkedList.addLast(2);
+        //linkedList.addLast(3);
+        //linkedList.addFirst(0);
+        linkedList.removeFirst();
         System.out.println(linkedList.indexOf(3));
         linkedList.addLast(4);
         System.out.println(linkedList.contains(1));
