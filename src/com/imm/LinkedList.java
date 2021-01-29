@@ -16,6 +16,19 @@ public class LinkedList  {
     private Node first;//head
     private Node last;//tail
 
+    public int indexOf(int item){
+        int index = 0;
+        var current = first;
+
+        while(current !=null){ //havent reach end of the list/ current.next =null
+            if (current.value == item) return index;
+            //otherwise assign current Node to current looping Node
+            current = current.next;
+            index++;
+        }
+
+        return -1;
+    }
     public void addLast(int item){
         var node = new Node(item);
         //if linkedlist empty assign to first Node
