@@ -27,10 +27,17 @@ public class Main {
         //linkedList.removeLast();
         //linkedList.removeFirst();
         //System.out.println(linkedList.size());
-        System.out.println(Arrays.toString(linkedList.toArray()));
+        // LinkedList convert to array
+        //System.out.println(Arrays.toString(linkedList.toArray()));
+
         //linkedList.reverse();
-        System.out.println(linkedList.kthNodeFromEnd(4));
+        //System.out.println(linkedList.kthNodeFromEnd(4));
         //linkedList.addLast(4);
+
+        // LinkedList Contains
         //System.out.println(linkedList.contains(1));
+
+        //String Riverser
+        System.out.println(StringReverser.reverseString("abcdefg"));
     }
 }
