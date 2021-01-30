@@ -121,7 +121,7 @@ public class LinkedList  {
         // p    c   n
         // n = c.next p=first c=p.next    last     first
         //c.next = p change the direction [10<-20<-30] or...
-        // ..Nodes Refference to preveious node/ reversed way c.next = p
+        //-current Node Refference(next) to preveious node/ reversed way c.next = p
 
         var previous = first; //
         var current = previous.next; // or first.next
@@ -137,8 +137,42 @@ public class LinkedList  {
         last.next = null; // last node doesnt have refference to any next Node
         first = previous; // cause as below
         //[10->20->30] p traverlse through and end at last which become first
-        //          p    c   n //now first = previous
+        //          p    c   n //now first = previous where c=null
     }
+
+
+    public int kthNodeFromEnd(int k){
+        //Interview Question Findi the kth Node from the end in one pass
+        //without looping entire list
+        //ex:
+        //[10 -> 20 -> 30 -> 40 -> 50]
+        // *           *
+        //move entire points until 2nd point reaches last node
+        //- (while keeping the gap between 2 point As below)
+        //[10 -> 20 -> 30 -> 40 -> 50]
+        //             *           *
+
+        // k = 1 [50]
+        // ..
+        // k = 3 [50] distance from 1st pointer to 2nd = 2 or (k-1)
+        if(isEmpty()) throw new IllegalArgumentException() ;
+
+        var a=first;
+        var b= first;
+
+        //now move b to (k-1) distance
+        for(int i=0; i<k-1; i++){
+            b=b.next;
+        }
+        //now move both 2 pointers until b reaches the Tail
+        while(b!=last){
+            a=a.next;
+            b=b.next;
+        }
+         return a.value;
+    }
+
+
 
     private boolean isEmpty(){
         return first == null;
