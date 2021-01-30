@@ -19,6 +19,18 @@ public class LinkedList  {
     private Node last;//tail
     private int size; //length of list
 
+    public int[] toArray(){
+
+        int[] array = new int[size];
+        var  current = first;
+        int index = 0;
+
+        while(current != null){
+            array[index++] = current.value;
+            current = current.next; //current refference to next Node
+        }
+        return array;
+    }
     public void removeLast(){
 
         if(isEmpty()) throw new NoSuchElementException();
@@ -103,6 +115,31 @@ public class LinkedList  {
         }
         size++;
     }
+    public void reverse(){
+        //first    last
+        //[10->20->30]
+        // p    c   n
+        // n = c.next p=first c=p.next    last     first
+        //c.next = p change the direction [10<-20<-30] or...
+        // ..Nodes Refference to preveious node/ reversed way c.next = p
+
+        var previous = first; //
+        var current = previous.next; // or first.next
+        while(current != null){
+            var next = current.next;
+            //change the direction
+            current.next=previous; // Nodes Refference to preveious node
+            previous=current;
+            current=next;
+        }
+
+        last = first; //1st set last become first
+        last.next = null; // last node doesnt have refference to any next Node
+        first = previous; // cause as below
+        //[10->20->30] p traverlse through and end at last which become first
+        //          p    c   n //now first = previous
+    }
+
     private boolean isEmpty(){
         return first == null;
     }
@@ -116,5 +153,9 @@ public class LinkedList  {
         }
         //if cpuldnt find the node
         return null;
+    }
+
+    public int size(){
+        return size;
     }
 }

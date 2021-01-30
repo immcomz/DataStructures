@@ -1,5 +1,7 @@
 package com.imm;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -15,13 +17,17 @@ public class Main {
 
         //creating new LinkedList
         var linkedList = new LinkedList();
+        linkedList.addFirst(-1);
         linkedList.addLast(1);
-//        linkedList.addLast(2);
-//        linkedList.addLast(3);
-//        linkedList.addFirst(0);
-        linkedList.removeLast();
-        linkedList.removeFirst();
-        //ystem.out.println(linkedList.indexOf(3));
+        linkedList.addLast(2);
+        linkedList.addLast(3);
+        linkedList.addFirst(0);
+        //linkedList.removeLast();
+        //linkedList.removeFirst();
+        //System.out.println(linkedList.size());
+        System.out.println(Arrays.toString(linkedList.toArray()));
+        linkedList.reverse();
+        System.out.println(Arrays.toString(linkedList.toArray()));
         //linkedList.addLast(4);
         //System.out.println(linkedList.contains(1));
     }
