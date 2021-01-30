@@ -38,6 +38,7 @@ public class Main {
         //System.out.println(linkedList.contains(1));
 
         //String Riverser
-        System.out.println(StringReverser.reverseString("abcdefg"));
+        //System.out.println(StringReverser.reverseString("abcdefg"));
+        System.out.println(BalancedExpression.isBalanced("( 1+2))"));;
     }
 }
