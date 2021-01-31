@@ -1,6 +1,9 @@
 package com.imm;
 
+import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Deque;
+import java.util.Queue;
 
 public class Main {
 
@@ -41,15 +44,23 @@ public class Main {
         //System.out.println(StringReverser.reverseString("abcdefg"));
         //Balanced String
         //System.out.println(BalancedExpression.isBalanced("(<1+2<)"));
-
-        Stack stack = new Stack(2);
+        //Stacks
+        //Stack stack = new Stack(2);
 //        stack.push(1);
 //        stack.push(2);
 //
 //        stack.pop();
 //        stack.push(3);
-        System.out.println(stack.peek());
-        System.out.println(stack);
+       // System.out.println(stack.peek());
+       // System.out.println(stack);
+
+        //Queues
+                      //a Double ended Q can add elements from front or back
+        Queue q = new ArrayDeque();
+        q.add(1);
+        q.add(2);
+        q.add(3);
+        QueueT.reverseQueue(q);
 
 
     }
