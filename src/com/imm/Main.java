@@ -62,12 +62,24 @@ public class Main {
 //        q.add(3);
 //        QueueT.reverseQueue(q);
         //Queues Using Array
-        ArrayQueue queue = new ArrayQueue(3);
+//        ArrayQueue queue = new ArrayQueue(3);
+//        queue.enqueue(1);
+//        queue.enqueue(2);
+//
+//        queue.enqueue(4);
+//
+//        System.out.println(queue);
+
+        //Queues Using Tow Stacks
+        QueueWithTwoStacks queue = new QueueWithTwoStacks();
+
         queue.enqueue(1);
         queue.enqueue(2);
+        //System.out.println(queue.dequeue());
+        //System.out.println(queue.dequeue());
         queue.enqueue(3);
-        //queue.enqueue(3);
-        queue.dequeue();
+        queue.enqueue(4);
+        queue.enqueue(5);
         System.out.println(queue.dequeue());
 
     }
