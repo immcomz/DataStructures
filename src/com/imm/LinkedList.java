@@ -137,9 +137,8 @@ public class LinkedList  {
         last.next = null; // last node doesnt have refference to any next Node
         first = previous; // cause as below
         //[10->20->30] p traverlse through and end at last which become first
-        //          p    c   n //now first = previous where c=null
+        //          p    c   n //now first = previous where c=null/ Terminate the Loop
     }
-
 
     public int kthNodeFromEnd(int k){
         //Interview Question Findi the kth Node from the end in one pass
@@ -172,8 +171,6 @@ public class LinkedList  {
          return a.value;
     }
 
-
-
     private boolean isEmpty(){
         return first == null;
     }
@@ -189,6 +186,7 @@ public class LinkedList  {
         return null;
     }
 
+    //getter
     public int size(){
         return size;
     }
