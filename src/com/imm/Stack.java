@@ -14,20 +14,28 @@ public class Stack {
     }
 
     public void push(int item){
-        if(count==items.length) throw new StackOverflowError();
+        if(isFull()) throw new StackOverflowError();
         //get the element and increment count at end
         items[count++] = item;
     }
 
     public int pop(){
-        if(count == 0) throw new IllegalStateException(); //state of object = 0
+        if(isEmpty()) throw new IllegalStateException(); //state of object = 0
         //decrement count first and return item
         return items[--count];
     }
 
     public int peek(){
-        if(count == 0) throw new IllegalStateException();
+        if(isEmpty()) throw new IllegalStateException();
         return items[count-1];
+    }
+
+    public boolean isEmpty(){
+        return count == 0;
+    }
+
+    public boolean isFull(){
+        return count==items.length;
     }
 
     @Override

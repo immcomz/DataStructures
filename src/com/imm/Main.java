@@ -43,11 +43,11 @@ public class Main {
         //System.out.println(BalancedExpression.isBalanced("(<1+2<)"));
 
         Stack stack = new Stack(2);
-        stack.push(1);
-        stack.push(2);
-
-        stack.pop();
-        stack.push(3);
+//        stack.push(1);
+//        stack.push(2);
+//
+//        stack.pop();
+//        stack.push(3);
         System.out.println(stack.peek());
         System.out.println(stack);
 
