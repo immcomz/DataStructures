@@ -56,12 +56,19 @@ public class Main {
 
         //Queues
                       //a Double ended Q can add elements from front or back
-        Queue q = new ArrayDeque();
-        q.add(1);
-        q.add(2);
-        q.add(3);
-        QueueT.reverseQueue(q);
-
+//        Queue q = new ArrayDeque();
+//        q.add(1);
+//        q.add(2);
+//        q.add(3);
+//        QueueT.reverseQueue(q);
+        //Queues Using Array
+        ArrayQueue queue = new ArrayQueue(3);
+        queue.enqueue(1);
+        queue.enqueue(2);
+        queue.enqueue(3);
+        //queue.enqueue(3);
+        queue.dequeue();
+        System.out.println(queue.dequeue());
 
     }
 }
