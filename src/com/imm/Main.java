@@ -39,6 +39,21 @@ public class Main {
 
         //String Riverser
         //System.out.println(StringReverser.reverseString("abcdefg"));
-        System.out.println(BalancedExpression.isBalanced("(<1+2<)"));;
+        //Balanced String
+        //System.out.println(BalancedExpression.isBalanced("(<1+2<)"));
+
+        Stack stack = new Stack(2);
+        stack.push(1);
+        stack.push(1);
+        stack.pop();
+       // stack.pop();
+        System.out.println(stack);
+
+        java.util.Stack stackJv = new java.util.Stack();
+            stackJv.push(1);
+            stackJv.push("1asasaa");
+            stackJv.pop();
+        System.out.println(stackJv);
+
     }
 }
