@@ -13,23 +13,34 @@ public class BalancedExpression {
         Stack<Character> stack = new Stack<>();
 
         for(char ch: input.toCharArray()){
-            if(ch =='(' || ch == '<'|| ch == '[' || ch == '{')
+            if(isLeftCharacter(ch))
                 stack.push(ch);
 
-            if(ch == ')'|| ch == '>'|| ch == ']' || ch == '}') {
+            if(isRightCharacter(ch)) {
                 if (stack.empty()) return false;//ex )1+4( to Avoid first pop
                 // get the top
                 var top = stack.pop();
                 // match the current character/symbol with top of the stack
-                if((ch==')' && top !='(') ||
-                   (ch=='>' && top !='<') ||
-                   (ch==']' && top !='[') ||
-                   (ch=='}' && top !='{') ) return false;
-
-
-
+                if(!isBracketMatch(top,ch)) return false;
             }
         }
         return stack.empty();
+    }
+
+    private static boolean isLeftCharacter(Character ch){
+        return ch =='(' || ch == '<'|| ch == '[' || ch == '{';
+    }
+
+    private static boolean isRightCharacter(Character ch){
+        return ch == ')'|| ch == '>'|| ch == ']' || ch == '}';
+    }
+
+    private static boolean isBracketMatch(char left,char right){
+        //where left = current character at String
+        //right = top character of the stack
+    return ((right==')' && left =='(') ||
+            (right=='>' && left =='<') ||
+            (right==']' && left =='[') ||
+            (right=='}' && left =='{'));
     }
 }
