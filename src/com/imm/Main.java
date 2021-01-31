@@ -44,16 +44,13 @@ public class Main {
 
         Stack stack = new Stack(2);
         stack.push(1);
-        stack.push(1);
+        stack.push(2);
+
         stack.pop();
-       // stack.pop();
+        stack.push(3);
+        System.out.println(stack.peek());
         System.out.println(stack);
 
-        java.util.Stack stackJv = new java.util.Stack();
-            stackJv.push(1);
-            stackJv.push("1asasaa");
-            stackJv.pop();
-        System.out.println(stackJv);
 
     }
 }

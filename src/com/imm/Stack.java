@@ -12,6 +12,7 @@ public class Stack {
     public Stack(int length){
         items = new int[length];
     }
+
     public void push(int item){
         if(count==items.length) throw new StackOverflowError();
         //get the element and increment count at end
@@ -22,6 +23,11 @@ public class Stack {
         if(count == 0) throw new IllegalStateException(); //state of object = 0
         //decrement count first and return item
         return items[--count];
+    }
+
+    public int peek(){
+        if(count == 0) throw new IllegalStateException();
+        return items[count-1];
     }
 
     @Override
