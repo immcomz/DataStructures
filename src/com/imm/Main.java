@@ -97,12 +97,21 @@ public class Main {
 //        System.out.println(Maps.findFirstDuplicates("a green apple"));
 
         //Simple Hash Functions
-        Map<Integer,String> mapIntKey = new HashMap<>();
-        mapIntKey.put(10023121,"qwwere");
-        Map<String,Integer> mapStrKey = new HashMap<>();
-        mapStrKey.put("sasdg-12233",10);
-        //Hashed location in 100 element of Array for String and Integer Keys
-        System.out.println(HashFucntion.hashString("sasdg-12233"));
-        System.out.println(HashFucntion.hashInt(10023121));
+//        Map<Integer,String> mapIntKey = new HashMap<>();
+//        mapIntKey.put(10023121,"qwwere");
+//        Map<String,Integer> mapStrKey = new HashMap<>();
+//        mapStrKey.put("sasdg-12233",10);
+//        //Hashed location in 100 element of Array for String and Integer Keys
+//        System.out.println(HashFucntion.hashString("sasdg-12233"));
+//        System.out.println(HashFucntion.hashInt(10023121));
+
+        //HashTables
+        HashTable table = new HashTable();
+        table.put(6,"A");//store at 1
+        table.put(8,"A");//store at 3
+        table.put(11,"C");// store at 1 should store at the last
+        //-in Linked List at index 1
+        table.put(6,"A+"); //add Duplicate Value
+        System.out.println("Done");
    }
 }

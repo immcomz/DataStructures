@@ -22,7 +22,7 @@ public class HashTable {
         }
     }
 
-    private final LinkedList<Entry>[] entries = new LinkedList[5];
+    private  LinkedList<Entry>[] entries = new LinkedList[5];
 
     public void put(int key, String value ){
         //hash value of Key/place to store new entry
@@ -35,8 +35,8 @@ public class HashTable {
         //Node/LinkedList entry at the index
         var bucket = entries[index];
         //Search For duplicates
-        for(var entry :entries[index]){
-            //whatisThisLoopEntry (var entry :entries[index]) above
+        for(var entry :entries[index]){ //iterate over LinkedList at index in array
+            //whatisThisLoopEntry = Linked List in Array
             var whatisThisLoopEntry =entries[index];
             //found assign the new value to exist entry
             if(entry.key==key) {
@@ -47,7 +47,21 @@ public class HashTable {
         //else/  any Node exist(not duplicates) in given index of LinkedList array add the Node
         //-end of this Linked List [_]-Exist Node->[_]- new Node(key Value) at End
         bucket.addLast(new Entry(key,value));
+    }
 
+    public String get(int key){
+        var index = hash(key);
+        //linkedList at given array Index
+        var bucket = entries[index];
+
+        //linkedList is not null
+        if(bucket != null) {
+            for (var entry : bucket)
+                if (entry.key == key)
+                    return entry.value;
+        }
+
+        return null; // else lisnkedList null
     }
 
     private int hash(int key){
