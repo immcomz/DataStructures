@@ -3,7 +3,7 @@ package com.imm;
 import java.util.NoSuchElementException;
 
 public class LinkedList  {
-
+    //LinkedList doesnt perform indexes
     //make Node class private/ only accible by LinkedList class
     private class Node {
         private int value;
