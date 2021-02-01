@@ -64,6 +64,21 @@ public class HashTable {
         return null; // else lisnkedList null
     }
 
+    public void remove(int key){
+        var index = hash(key);
+        var bucket = entries[index];
+
+        if(bucket == null)
+            throw new IllegalStateException();
+        for(var entry:bucket) {
+            if (entry.key==key){
+                bucket.remove(entry);
+                return;
+            }
+        }
+        throw new IllegalStateException();
+    }
+
     private int hash(int key){
         return key % entries.length;
     }

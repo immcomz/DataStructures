@@ -112,6 +112,6 @@ public class Main {
         table.put(11,"C");// store at 1 should store at the last
         //-in Linked List at index 1
         table.put(6,"A+"); //add Duplicate Value
-        System.out.println("Done");
+        System.out.println(table.get(6));
    }
 }
