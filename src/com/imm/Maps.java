@@ -35,7 +35,15 @@ public class Maps {
         return Character.MIN_VALUE; // a default value when cant find any 1st repeated
     }
 
-
+    //Famous Interview Question
+    //Remove Duplication in a List
+    public static Set removeDuplicates(int[]array){
+        Set<Integer> set = new HashSet<>();
+        for(int item:array){
+            set.add(item);
+        }
+        return set;
+    }
 
 
 

@@ -1,9 +1,6 @@
 package com.imm;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Deque;
-import java.util.Queue;
+import java.util.*;
 
 public class Main {
 
@@ -71,16 +68,31 @@ public class Main {
 //        System.out.println(queue);
 
         //Queues Using Tow Stacks
-        QueueWithTwoStacks queue = new QueueWithTwoStacks();
+//        QueueWithTwoStacks queue = new QueueWithTwoStacks();
+//
+//        queue.enqueue(1);
+//        queue.enqueue(2);
+//        //System.out.println(queue.dequeue());
+//        //System.out.println(queue.dequeue());
+//        queue.enqueue(3);
+//        queue.enqueue(4);
+//        queue.enqueue(5);
+//        System.out.println(queue.dequeue());
 
-        queue.enqueue(1);
-        queue.enqueue(2);
-        //System.out.println(queue.dequeue());
-        //System.out.println(queue.dequeue());
-        queue.enqueue(3);
-        queue.enqueue(4);
-        queue.enqueue(5);
-        System.out.println(queue.dequeue());
+        //Priority Queue
+//        PiorityQueue queue = new PiorityQueue();
+//        queue.add(3);
+//        queue.add(5);
+//        queue.add(1);
+//        queue.add(4);
+//        //queue.add(7);
+//        System.out.println(queue);
+//        System.out.println(queue.remove());
+//        System.out.println(queue.remove());
 
+        //Maps
+        System.out.println(Maps.findFirstNonRepetedCharacter("a green apple"));
+        int arr[] = {1,1,2,3,4,4,4,5,6,7};
+        System.out.println(Maps.removeDuplicates(arr).toString());
     }
 }
