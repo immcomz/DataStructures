@@ -91,8 +91,18 @@ public class Main {
 //        System.out.println(queue.remove());
 
         //Maps
-        System.out.println(Maps.findFirstNonRepetedCharacter("a green apple"));
-        int arr[] = {1,1,2,3,4,4,4,5,6,7};
-        System.out.println(Maps.removeDuplicates(arr).toString());
-    }
+//        System.out.println(Maps.findFirstNonRepetedCharacter("a green apple"));
+//        int arr[] = {1,1,2,3,4,4,4,5,6,7};
+//        System.out.println(Maps.removeDuplicates(arr).toString());
+//        System.out.println(Maps.findFirstDuplicates("a green apple"));
+
+        //Simple Hash Functions
+        Map<Integer,String> mapIntKey = new HashMap<>();
+        mapIntKey.put(10023121,"qwwere");
+        Map<String,Integer> mapStrKey = new HashMap<>();
+        mapStrKey.put("sasdg-12233",10);
+        //Hashed location in 100 element of Array for String and Integer Keys
+        System.out.println(HashFucntion.hashString("sasdg-12233"));
+        System.out.println(HashFucntion.hashInt(10023121));
+   }
 }
