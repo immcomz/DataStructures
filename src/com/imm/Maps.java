@@ -38,12 +38,32 @@ public class Maps {
     //Famous Interview Question
     //Remove Duplication in a List
     public static Set removeDuplicates(int[]array){
+        //sets are not allows Duplicates
+        //copy array elements to Set
         Set<Integer> set = new HashSet<>();
         for(int item:array){
             set.add(item);
         }
         return set;
     }
+
+    //Famous Interview Question
+    //Find First Repeated Value
+
+    public static char findFirstDuplicates(String str){
+        //a green apple
+        //     ^ now set contains 'e'
+        Set<Character> set = new HashSet<>();
+
+        for(Character ch:str.toCharArray()){
+            if(set.contains(ch)) return ch;
+
+            set.add(ch);
+        }
+        return Character.MIN_VALUE;
+
+    }
+
 
 
 
