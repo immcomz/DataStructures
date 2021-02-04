@@ -36,7 +36,7 @@ public class ArrayQueue {
         var item = items[front]; //get the value b4 make it as 0
         //1st assign 2nd increment
         items[front]=0; //make the previous fron as 0
-        front = (front+1) % items.length; // inorder to make the array circular
+        front = (front+1) % items.length; // inorder to make the array circular(circular Array)
         count--;
         return item;
     }

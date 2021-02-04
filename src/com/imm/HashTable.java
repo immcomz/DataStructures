@@ -1,5 +1,6 @@
 package com.imm;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class HashTable {
@@ -21,68 +22,77 @@ public class HashTable {
             this.value = value;
         }
     }
-
-    private  LinkedList<Entry>[] entries = new LinkedList[5];
+    //private  ArrayList<LinkedList<Entry>> entries = new ArrayList<>();
+    //use ArrayList for Dynamic List
+    private  LinkedList<Entry>[] entries = new LinkedList[5];// [bucket<Entry>,bucket<Entry>,bucket]
 
     public void put(int key, String value ){
-        //hash value of Key/place to store new entry
-        var index = hash(key);
-        //if node at index is empty
-        if(entries[index]==null)
-            // add Node at index in the LL array of Linkedlist entries
-            entries[index]= new LinkedList<>();
-
-        //Node/LinkedList entry at the index
-        var bucket = entries[index];
-        //Search For duplicates
-        for(var entry :entries[index]){ //iterate over LinkedList at index in array
-            //whatisThisLoopEntry = Linked List in Array
-            var whatisThisLoopEntry =entries[index];
-            //found assign the new value to exist entry
-            if(entry.key==key) {
-                entry.value = value;
-                return;
-            }
+        var entry = getEntry(key);
+        if(entry != null){
+            entry.value = value;
+            return;
         }
+
         //else/  any Node exist(not duplicates) in given index of LinkedList array add the Node
         //-end of this Linked List [_]-Exist Node->[_]- new Node(key Value) at End
+        var bucket = getOrCreateNewEntry(key);
         bucket.addLast(new Entry(key,value));
     }
 
     public String get(int key){
-        var index = hash(key);
-        //linkedList at given array Index
-        var bucket = entries[index];
+        var entry = getEntry(key);
 
-        //linkedList is not null
-        if(bucket != null) {
-            for (var entry : bucket)
-                if (entry.key == key)
-                    return entry.value;
-        }
+        return (entry==null) ? null: entry.value;
 
-        return null; // else lisnkedList null
     }
 
     public void remove(int key){
-        var index = hash(key);
-        var bucket = entries[index];
-
-        if(bucket == null)
+        var entry = getEntry(key);
+        if(entry == null)
             throw new IllegalStateException();
-        for(var entry:bucket) {
-            if (entry.key==key){
-                bucket.remove(entry);
-                return;
-            }
-        }
-        throw new IllegalStateException();
+
+        var bucket = getBucket(key);
+        bucket.remove(entry);
+
     }
 
     private int hash(int key){
         return key % entries.length;
     }
 
+    private Entry getEntry(int key){
+
+        var bucket = getBucket(key);
+        //linkedList/bucket is null
+        if(bucket != null) {
+            for (var entry : bucket) {
+                if (entry.key == key)
+                    return entry; //get the entry(k,v)
+            }
+        }
+        //if bucket null
+        return null;
+    }
+
+    private LinkedList<Entry> getBucket(int key){
+        //hash the key
+        var index = hash(key);
+        //linkedList at given array Index
+        var bucket = entries[index];
+
+        return bucket;
+    }
+
+    private LinkedList<Entry>getOrCreateNewEntry(int key){
+        var index = hash(key);
+        var bucket = entries[index];
+        //create new LinkedList to add entry
+        if(bucket == null)
+            // add new Node at index in the LL array of Linkedlist entries
+            entries[index] = new LinkedList<>();
+        //or get the bucket
+        return bucket;
+    }
 
 
 }

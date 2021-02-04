@@ -117,8 +117,10 @@ public class LinkedList  {
     }
     public void reverse(){
         //first    last
-        //[10->20->30]
-        // p    c   n
+        //[10 ->20 ->30]
+        // p    c    n
+        //      p=c  c=n   n=0
+        //           p=front c=0   n=0 stop iteration
         // n = c.next p=first c=p.next    last     first
         //c.next = p change the direction [10<-20<-30] or...
         //-current Node Refference(next) to preveious node/ reversed way c.next = p
@@ -127,8 +129,8 @@ public class LinkedList  {
         var current = previous.next; // or first.next
         while(current != null){
             var next = current.next;
-            //change the direction
-            current.next=previous; // Nodes Refference to preveious node
+            //change the direction current.next=previous -> to <-/next of Node
+            current.next=previous; // Nodes Refference to preveious node now
             previous=current;
             current=next;
         }
@@ -153,7 +155,7 @@ public class LinkedList  {
 
         // k = 1 [50]
         // ..
-        // k = 3 [50] distance from 1st pointer to 2nd = 2 or (k-1)
+        // k = 3 [30] distance from 1st pointer to 2nd = 2 or (k-1)
         if(isEmpty()) throw new IllegalArgumentException() ;
 
         var a=first;
