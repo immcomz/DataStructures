@@ -16,6 +16,7 @@ public class Stack {
     public void push(int item){
         if(isFull()) throw new StackOverflowError();
         //get the element and increment count at end
+        //count++ then items[count++] = item
         items[count++] = item;
     }
 

@@ -3,8 +3,8 @@ package com.imm;
 import java.util.Arrays;
 
 public class ArrayQueue {
-    //[1,2,3,4,5,6,7]
-    //f=0           r=6
+    //[1,2,3,4,5]
+    //f=0     r=4
 
     //Circular Arrays ex: after deq 2 elements from [1,2,3,4,5]
     //[0,0,3,4,5] cant add any items more cause array is full with 2 spaces [0,0,...
